@@ -5,13 +5,9 @@ import 'home_page.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Call AppConfig.of(context) anywhere to obtain the
-    // environment specific configuration
-    var config = AppConfig.of(context);
-
     return new MaterialApp(
-      title: config.appName,
-      debugShowCheckedModeBanner: config.debugShowCheckedModeBanner,
+      title: AppConfig.instance.apiHost,
+      // debugShowCheckedModeBanner: config.debugShowCheckedModeBanner,
       theme: new ThemeData(primarySwatch: Colors.indigo),
       home: new HomePage(),
     );

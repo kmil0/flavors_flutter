@@ -1,19 +1,13 @@
-import 'app_config.dart';
-import 'app.dart';
-
 import 'package:flutter/material.dart';
+import 'package:sprint95/app.dart';
+import 'package:sprint95/app_config.dart';
 
 void main() {
-  var configuredApp = new AppConfig(
-    appName: 'Build flavors DEV',
-    flavorName: 'development',
-    apiBaseUrl: 'https://dev-api.example.com/',
-    debugShowCheckedModeBanner: true,
-    child: new MyApp(),
-  );
+  AppConfig.instance.init(
+      apiHost: "https://apihostDEV.com",
+      icon: "/assets/icon/dev.png",
+      primaryColor: Colors.redAccent,
+      secondaryColor: Colors.white);
 
-  //flutter run
-  runApp(configuredApp);
-
-  //flutter build apk
+  runApp(MyApp());
 }
