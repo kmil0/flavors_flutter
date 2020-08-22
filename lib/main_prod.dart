@@ -6,8 +6,9 @@ void main() {
   AppConfig.instance.init(
       apiHost: "https://apihostPDN.com",
       icon: "/assets/icon/pdn.png",
-      primaryColor: Colors.greenAccent,
-      secondaryColor: Colors.white);
+      primaryColor: Colors.blueAccent,
+      secondaryColor: Colors.white,
+      debugShowCheckedModeBanner: false);
 
   runApp(MyApp());
 }

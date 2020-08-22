@@ -6,8 +6,9 @@ void main() {
   AppConfig.instance.init(
       apiHost: "https://apihostQA.com",
       icon: "/assets/icon/qa.png",
-      primaryColor: Colors.blueAccent,
-      secondaryColor: Colors.white);
+      primaryColor: Colors.deepPurpleAccent,
+      secondaryColor: Colors.white,
+      debugShowCheckedModeBanner: true);
 
   runApp(MyApp());
 }

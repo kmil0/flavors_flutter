@@ -6,8 +6,9 @@ void main() {
   AppConfig.instance.init(
       apiHost: "https://apihostDEV.com",
       icon: "/assets/icon/dev.png",
-      primaryColor: Colors.redAccent,
-      secondaryColor: Colors.white);
+      primaryColor: Colors.green,
+      secondaryColor: Colors.white,
+      debugShowCheckedModeBanner: true);
 
   runApp(MyApp());
 }

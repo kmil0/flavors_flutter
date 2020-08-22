@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: AppConfig.instance.apiHost,
-      // debugShowCheckedModeBanner: config.debugShowCheckedModeBanner,
+      debugShowCheckedModeBanner: AppConfig.instance.debugShowCheckedModeBanner,
       theme: new ThemeData(primarySwatch: Colors.indigo),
       home: new HomePage(),
     );

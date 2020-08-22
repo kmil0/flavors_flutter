@@ -5,17 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Flutter",
+            "name": "Flutter DEV",
             "program": "lib/main.dart",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": ["--flavor", "dev"]
         },
         {
             "name": "Flutter QA with redbox ",
             "program": "lib/main_qa.dart",
             "request": "launch",
             "type": "dart",
-            "args": [
+            "args": ["--flavor","qa",
                 "--dart-define=showRedBox=true"
             ]
         },
@@ -24,7 +25,7 @@
             "program": "lib/main_prod.dart",
             "request": "launch",
             "type": "dart",
-            "args": [
+            "args": ["--flavor","pdn",
                 "--dart-define=showRedBox=true"
             ]
         }
