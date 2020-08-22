@@ -1,6 +1,6 @@
 # Environment config Flutter
 (dev,QA,prod)
-[![Build Status]
+
 A new Flutter application.
 
 ## Getting Started
