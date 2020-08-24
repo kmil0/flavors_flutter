@@ -1,17 +1,14 @@
-import 'app_config.dart';
-import 'app.dart';
-
 import 'package:flutter/material.dart';
+import 'package:sprint95/app.dart';
+import 'package:sprint95/app_config.dart';
 
 void main() {
-  var configuredApp = new AppConfig(
-    appName: 'Build flavors QA',
-    flavorName: 'QA',
-    apiBaseUrl: 'https://qa-api.example.com/',
-    debugShowCheckedModeBanner: true,
-    child: new MyApp(),
-  );
-//flutter run  -t lib/main_qa.dart
-  runApp(configuredApp);
-//flutter build apk -t lib/main_qa.dart
+  AppConfig.instance.init(
+      apiHost: "https://apihostQA.com",
+      icon: "/assets/icon/qa.png",
+      primaryColor: Colors.deepPurpleAccent,
+      secondaryColor: Colors.white,
+      debugShowCheckedModeBanner: true);
+
+  runApp(MyApp());
 }

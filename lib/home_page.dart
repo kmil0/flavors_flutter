@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sprint95/api/account_api.dart';
 
 import 'app_config.dart';
 
@@ -7,23 +8,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
   final environmentConfiguration = EnvironmentConfiguration();
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    var config = AppConfig.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(config.flavorName),
+        title: Text(AppConfig.instance.apiHost),
+        backgroundColor: AppConfig.instance.primaryColor,
       ),
-
       body: Column(
         children: [
           Container(
@@ -36,20 +29,23 @@ class _HomePageState extends State<HomePage> {
             width: 100,
             color: Colors.yellow,
           ),
-          if(environmentConfiguration.showRedBox)
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.red,
-          )
+          if (environmentConfiguration.showRedBox)
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.red,
+            ),
+          SizedBox(
+            height: 20,
+          ),
+          FlatButton(
+              child: Text("GET HOST API"),
+              onPressed: () {
+                final host = AccountAPI.getHost();
+                print("host $host");
+              })
         ],
       ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

@@ -1,24 +1,32 @@
-import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'dart:ui';
+import 'package:meta/meta.dart' show required;
 
-class AppConfig extends InheritedWidget {
-  AppConfig({
-    @required this.appName,
-    @required this.flavorName,
-    @required this.apiBaseUrl,
-    @required this.debugShowCheckedModeBanner,
-    @required Widget child,
-  }) : super(child: child);
+class AppConfig {
+  String _apiHost, _icon;
+  Color _primaryColor, _secondaryColor;
+  bool _debugShowCheckedModeBanner;
 
-  final String appName;
-  final String flavorName;
-  final String apiBaseUrl;
-  final bool debugShowCheckedModeBanner;
+  AppConfig._internal();
+  static final AppConfig _instance = AppConfig._internal();
+  static AppConfig get instance => _instance;
 
-  static AppConfig of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType(aspect: AppConfig);
+  String get apiHost => _apiHost;
+  String get icon => _icon;
+  Color get primaryColor => _primaryColor;
+  Color get sencondaryColor => _secondaryColor;
+  bool get debugShowCheckedModeBanner => _debugShowCheckedModeBanner;
+
+  void init({
+    @required String apiHost,
+    @required String icon,
+    @required Color primaryColor,
+    @required Color secondaryColor,
+    @required bool debugShowCheckedModeBanner,
+  }) {
+    this._apiHost = apiHost;
+    this._icon = icon;
+    this._primaryColor = primaryColor;
+    this._secondaryColor = secondaryColor;
+    this._debugShowCheckedModeBanner = debugShowCheckedModeBanner;
   }
-
-  @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => false;
 }
