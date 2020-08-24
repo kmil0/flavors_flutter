@@ -1,0 +1,7 @@
+#include "Generated.xcconfig"
+
+FLUTTER_BUILD_NAME=1.0.0
+FLUTTER_BUILD_NUMBER=1
+APP_NAME=Showcase
+FLUTTER_TARGET=/Users/administrador/Developer/Projects/sprint95/lib/main_prod.dart
+PREFIX=pdn
