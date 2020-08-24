@@ -2,7 +2,7 @@
 (dev,QA,prod)
 
 <img src="assets/android1.png" width="276" height="597"> <img src="assets/android2.png" width="276" height="597">
-<img src="assets/ios1.png" width="276" height="597"> <img src="assets/ios2.png" width="276" height="597">
+<img src="assets/ios.png" width="276" height="597"> <img src="assets/io2.png" width="276" height="597">
 
 
 ## Getting Started
